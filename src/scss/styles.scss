@@ -1,0 +1,290 @@
+@import './vars';
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+// Variables
+
+
+// Mixins
+@mixin transition($property) {transition: $property .25s;}
+
+/*Typography*/
+html {font-family: 'Mulish', sans-serif;}
+
+/*Layout*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+body {color: $lightBlack;}
+*,
+*:before,
+*:after {box-sizing: border-box;}
+.line {
+  float: left;
+  width: 100%;
+  border-top: .25em solid $lightBlack;
+}
+.wrapper {
+  margin: auto;
+  width: 60em;/*960px*/
+}
+header,
+nav,
+section,
+footer {
+  float: left;
+  width: 100%;
+}
+nav{
+  background-color: $lightBlack;
+  background: rgba(0,0,0,.5);
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  transition: color .25s;
+  font-size: 17px ;
+  padding: 0;
+  margin: 0;
+}
+.logo_menu{
+    width: 100px;
+    height: 72px;
+    position: relative;
+}
+.top-part{
+  background-image: url(../images/bck-picture.jpg);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  
+}
+#t-part{
+
+}
+.button {
+  display: block;
+  padding: .75em 1.25em;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: $lightBlack;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  &:focus,
+  &:hover {background: darken($lightBlack, 7%);}
+  &:active {background: $lightBlack;}
+}
+.link {
+  font-weight: bold;
+  color: $lightBlack;
+  padding: 10px;
+  &:focus,
+  &:hover {color: $ghostWhite;
+  background-color: $lightBlack;
+  }
+  &:active {color: lighten($lightBlack, 5%);}
+}
+/*Navigation*/
+nav h1 {
+  float: left;
+  padding: .25em .25em 0 0;
+  font-size: 4.5em;
+  text-transform: uppercase;
+}
+nav h1 a {color: $blue;}
+.nav-ul {
+  display: flex;
+  list-style-type: none;
+}
+header li {width: 20%;}
+header li:not(:first-child) {margin-left: 2%;}
+header .nav-ul a {
+  display: block;
+  padding: 1.25em 1.5em;
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $ghostWhite;
+
+  &:focus,
+  &:hover {color: $blue;}
+  &:active {color: lighten($blue, 5%);}
+}
+header li:nth-child(2) a {
+  background: $totalBlack;
+  color: #fff;
+  &:hover {color: #fff;}
+}
+/*Sections*/
+section {margin: 1em 0;}
+section h1 {text-transform: uppercase;}
+hr {
+  border-color: $lightGrey;
+  border-style: solid;
+}
+
+/*Intro*/
+.sec-intro {position: relative;}
+.sec-intro img {
+  width: 100%;
+}
+.sec-intro h1 {
+  position: absolute;
+  bottom: .5em;
+  left: .5em;
+  padding: .5em;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+}
+/*Boxes*/
+.box {
+  float: left;
+  padding: 4.5em 1em;
+  color: $ghostWhite;
+  width: 100%;
+  height: 500px;
+  border-top: .1em solid $lightGrey;
+  border-bottom: .1em solid $lightGrey;
+  border-left: .1em solid $lightGrey;
+  @include transition(background);
+  &:focus,
+  &:hover {background: #f5f5f5;
+    color: $lightBlack;
+  }
+}
+.box:last-child {border-right: .1em solid $lightGrey;}
+.box h1 {text-align: center;}
+.box p {
+  margin-top: 4em;
+  height: 6em;
+  text-align: justify;
+}
+.box .button {
+  margin: 4em auto;
+}
+
+/*Projects*/
+.sec-events > h1 {margin-top: 1em;}
+.sec-events article {
+  float: left;
+  padding: 0 .25em;
+  width: 50%;
+  text-align: justify;
+}
+.sec-events article h1,
+.sec-events article p {
+  display: block;
+  margin: .5em 0;
+  padding: .25em 1em;
+  font-size: 110%;
+}
+.sec-events article a {float: right;padding-right: 1em;}
+.sec-events article h1 {font-weight: bold;text-align: center;}
+/*Safety*/
+.sec-projects {width: 50%;}
+.sec-projects > h1 {
+  margin-top: 1em;
+  text-align: center;
+}
+.sec-projects article {
+  padding: .5em 0;
+  width: 100%;
+}
+.sec-projects article h1,
+.sec-projects article p {font-size: 110%;}
+.sec-projects article h1 {font-weight: bold;}
+.sec-projects article p {
+  margin: .5em .5em .5em 0;
+  text-align: justify;
+}
+.sec-projects p a {float: right;}
+.sec-projects button {
+  position: relative;
+  left: 80%;
+}
+/*Services*/
+.sec-standards {width: 50%;
+padding-left: 10%;}
+.sec-standards > h1 {
+  margin-top: 1em;
+  text-align: center;
+}
+.sec-standards article {
+  float: none;
+
+  padding: .5em 1em;
+  width: 400px;
+  
+}
+.sec-standards article:last-child {padding: .5em 0;}
+.sec-standards article h1 {text-align: center;}
+/*Partners*/
+.sec-partners h1 {margin-top: 1em;}
+.sec-partners .row {
+  float: left;
+  margin: 2em 0;
+}
+.logo-container {
+  float: left;
+  width: 16%;
+  width: 100px;
+}
+.logo-container:not(:first-child) {margin-left: 7.5%;}
+.logo-container:first-child {margin-top: .2em;}
+.logo-container:nth-of-type(2) img {margin-top: 1.2em}
+.logo-container:nth-of-type(3) img {margin-top: 1.8em;}
+.logo-container:nth-of-type(4) img {margin-top: 2.35em;}
+.logo-container:nth-of-type(5) img {margin-top: .35em;}
+.logo-container:last-of-type img {margin-top: .65em;}
+.sec-partners img {
+  float: left;
+  width: 100%;
+}
+/*Footer*/
+footer {
+  position: relative;
+  background: $lightGrey;
+  color: $lightBlack;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
+  width: 100% auto;
+  padding: 0;
+  margin: 0;
+}
+footer hr {
+  border-color: $totalBlack;
+}
+footer .footer_bottom {
+  background: $totalBlack;
+  color: $ghostWhite;
+  height: 50px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  mix-blend-mode: normal;
+  padding-top: 15px;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  justify-self: center;
+}
+
+footer .footer_content {
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+footer .footer_content .footer_section {
+  flex: 1;
+  padding: 25px;
+}
+
